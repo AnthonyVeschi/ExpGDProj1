@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //only 
+        //rotate just camera if right clicking
         if (Input.GetMouseButton(1))
         {
             Quaternion cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * cameraRotateSpeed, -Vector3.up);
@@ -46,6 +46,7 @@ public class CameraController : MonoBehaviour
             transform.position = newPos;
             transform.LookAt(target);
         }
+        //else rotate camera and target together
         else
         {
             //gets X of mouse and roatates the target
