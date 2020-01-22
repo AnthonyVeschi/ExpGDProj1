@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         //rotate just camera if right clicking
-        if (Input.GetMouseButton(1))
+        if (Input.GetKey("c"))
         {
             Quaternion cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * cameraRotateSpeed, -Vector3.up);
 
