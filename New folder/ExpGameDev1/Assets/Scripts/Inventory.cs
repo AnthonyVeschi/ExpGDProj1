@@ -6,8 +6,10 @@ public class Inventory : MonoBehaviour
 {
     public GameObject[] Items;
     public GameObject[] Slots;
+    public GameObject[] UISlots;
 
     int pickUpID;
+    GameObject pickUpButton;
 
     bool spaceForItem;
     int spaceIndex;
@@ -48,6 +50,8 @@ public class Inventory : MonoBehaviour
                 if (spaceForItem)
                 {
                     Slots[spaceIndex] = Items[pickUpID];
+                    pickUpButton = hit.transform.GetComponent<itemImage>().button;
+                    Instantiate(pickUpButton, UISlots[spaceIndex].transform);
                     Destroy(hit.transform.gameObject);
                 }
             }
