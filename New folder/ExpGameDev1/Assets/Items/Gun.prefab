@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3891100764686798407}
   - component: {fileID: 9135147962474317984}
   - component: {fileID: 4365725315002101598}
-  - component: {fileID: 1318497956242388077}
   - component: {fileID: 83246997493065284}
+  - component: {fileID: 4107683171096475158}
   m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
@@ -108,35 +108,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3978335392645827963}
   m_CullTransparentMesh: 0
---- !u!114 &1318497956242388077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3978335392645827963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
 --- !u!114 &83246997493065284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +120,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce4dc4b709e2b249a534e35115c36d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+--- !u!114 &4107683171096475158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978335392645827963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239f8dd3905aace439979ef05354a4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1172561435703780539, guid: 579d92e4d03b90f468f8eb9047ade1e2, type: 3}
