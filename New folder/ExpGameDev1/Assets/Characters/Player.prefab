@@ -343,7 +343,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   equippedItemID: -1
-  pickUpRange: 10
+  pickUpRange: 20
+  gunThrowForce: 20
   cam: {fileID: 5472648605305988585}
   gunPosition: {fileID: 0}
 --- !u!1 &5472648606014010332

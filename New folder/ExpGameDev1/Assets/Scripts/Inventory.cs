@@ -19,6 +19,13 @@ public class Inventory : MonoBehaviour
     public float pickUpRange = 2f;
     int pickUpLayerMask;
 
+    GameObject gun;
+    GameObject wire;
+
+    Rigidbody gunRB;
+
+    public float gunThrowForce = 50f;
+
     public Camera cam;
 
     public Transform gunPosition;
@@ -62,15 +69,38 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        switch (equippedItemID)
+        if (Input.GetMouseButtonDown(0))
         {
-            case (-1):
-                break;
-            case (0):
-                break;
-            case (1):
-                break;
+            switch (equippedItemID)
+            {
+                case (-1):
+                    break;
+                case (0):
+                    int i = -1;
+                    foreach (GameObject item in Slots)
+                    {
+                        if (item != null && item.GetComponent<itemID>().ID == 0)
+                        {
+                            i = System.Array.IndexOf(Slots, item);
+                            break;
+                        }
+                    }
+                    Slots[i] = null;
+                    GameObject destroyableButton = UISlots[i].transform.Find("gunButton(Clone)").gameObject;
+                    Destroy(destroyableButton);
+
+                    gun.transform.parent = null;
+                    gunRB = gun.GetComponent<Rigidbody>();
+                    gunRB.isKinematic = false;
+                    gunRB.AddForce(cam.transform.forward * gunThrowForce, ForceMode.Impulse);
+                    equippedItemID = -1;
+                    break;
+                case (1):
+                    break;
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.R)) { PutAwayItem(); }
     }
 
     public void EquipItem(int ID)
@@ -78,10 +108,10 @@ public class Inventory : MonoBehaviour
         switch (ID)
         {
             case (0):
-                //Vector3 currentPos = gunPosition.localPosition;
-                Instantiate(Items[ID], gunPosition, false);
-                //gunPosition.localPosition = currentPos;
-                //okay this is hecka fucky
+                if (equippedItemID == 0) { break; }
+                else if (equippedItemID != -1) { PutAwayItem(); }
+
+                gun = Instantiate(Items[ID], gunPosition, false);
                 equippedItemID = 0;
                 break;
             case (1):
@@ -97,6 +127,7 @@ public class Inventory : MonoBehaviour
             case (-1):
                 break;
             case (0):
+                Destroy(gun);
                 break;
             case (1):
                 break;
