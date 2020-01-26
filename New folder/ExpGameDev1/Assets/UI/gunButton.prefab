@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5921313070837533663}
   - component: {fileID: 1878260255893720795}
   - component: {fileID: 7136565884483386257}
+  - component: {fileID: 7352993972312197028}
   m_Layer: 5
   m_Name: gunButton
   m_TagString: Untagged
@@ -120,3 +121,15 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7352993972312197028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172561435703780539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6e634022b575c4492c1cb6a60ac9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

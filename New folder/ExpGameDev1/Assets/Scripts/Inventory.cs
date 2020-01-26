@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
     public GameObject[] Slots;
     public GameObject[] UISlots;
 
+    public int equippedItemID = -1;
+
     int pickUpID;
     GameObject pickUpButton;
 
@@ -19,10 +21,13 @@ public class Inventory : MonoBehaviour
 
     public Camera cam;
 
+    public Transform gunPosition;
+
     // Start is called before the first frame update
     void Start()
     {
         pickUpLayerMask = LayerMask.GetMask("Item");
+        gunPosition = transform.Find("GunPos");
     }
 
     // Update is called once per frame
@@ -57,6 +62,45 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        spaceForItem = false;
+        switch (equippedItemID)
+        {
+            case (-1):
+                break;
+            case (0):
+                break;
+            case (1):
+                break;
+        }
+    }
+
+    public void EquipItem(int ID)
+    {
+        switch (ID)
+        {
+            case (0):
+                //Vector3 currentPos = gunPosition.localPosition;
+                Instantiate(Items[ID], gunPosition, false);
+                //gunPosition.localPosition = currentPos;
+                //okay this is hecka fucky
+                equippedItemID = 0;
+                break;
+            case (1):
+                equippedItemID = 1;
+                break;
+        }
+    }
+
+    public void PutAwayItem()
+    {
+        switch (equippedItemID)
+        {
+            case (-1):
+                break;
+            case (0):
+                break;
+            case (1):
+                break;
+        }
+        equippedItemID = -1;
     }
 }
