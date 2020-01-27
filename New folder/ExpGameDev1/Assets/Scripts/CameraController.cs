@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     private Vector3 offsetX;
     private Vector3 offsetY;
 
+    bool listenToInput = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,56 +39,68 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //rotate just camera if right clicking
-        if (Input.GetKey("c"))
+        if (listenToInput)
         {
-            Quaternion cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * cameraRotateSpeed, -Vector3.up);
-
-            Vector3 newPos = target.position + (cameraTurnAngle * (transform.position-target.position));
-            transform.position = newPos;
-            transform.LookAt(target);
-        }
-        //else rotate camera and target together
-        else
-        {
-            //gets X of mouse and roatates the target
-            float horizontal = Input.GetAxis("Mouse X") * cameraRotateSpeed;
-            target.Rotate(0, horizontal, 0);
-
-            //gets Y of mouse and roatates the target
-            float vertical = Input.GetAxis("Mouse Y") * cameraRotateSpeed;
-            pivot.Rotate(-vertical, 0, 0);
-
-            //player can move camera above 60 degrees
-            if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180f)
+            //rotate just camera if right clicking
+            if (Input.GetKey("c"))
             {
-                pivot.rotation = Quaternion.Euler(maxViewAngle, 0, 0);
+                Quaternion cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * cameraRotateSpeed, -Vector3.up);
+
+                Vector3 newPos = target.position + (cameraTurnAngle * (transform.position - target.position));
+                transform.position = newPos;
+                transform.LookAt(target);
             }
-
-            //player can't move camera below -10 degrees
-            if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 360f + minViewAngle)
+            //else rotate camera and target together
+            else
             {
-                pivot.rotation = Quaternion.Euler(360f + minViewAngle, 0, 0);
-            }
+                //gets X of mouse and roatates the target
+                float horizontal = Input.GetAxis("Mouse X") * cameraRotateSpeed;
+                target.Rotate(0, horizontal, 0);
 
-            //moves the camera based on current rotation of target
-            float yAngle = target.eulerAngles.y;
-            float xAngle = pivot.eulerAngles.x;
-            rotation = Quaternion.Euler(xAngle, yAngle, 0);
+                //gets Y of mouse and roatates the target
+                float vertical = Input.GetAxis("Mouse Y") * cameraRotateSpeed;
+                pivot.Rotate(-vertical, 0, 0);
 
-            transform.position = target.position - (rotation * offset);
-
-            //checks if camera view is blocked by an object and if so adjusts the camera to not be blocked
-            RaycastHit wallHit = new RaycastHit();
-            if (Physics.Linecast(target.position, transform.position, out wallHit))
-            {
-                Debug.DrawLine(transform.position, target.position, Color.green);
-                if (wallHit.collider.tag != "Collectible")
+                //player can move camera above 60 degrees
+                if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180f)
                 {
-                    transform.position = new Vector3(wallHit.point.x, wallHit.point.y, wallHit.point.z) + wallHit.normal;
+                    pivot.rotation = Quaternion.Euler(maxViewAngle, 0, 0);
                 }
+
+                //player can't move camera below -10 degrees
+                if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 360f + minViewAngle)
+                {
+                    pivot.rotation = Quaternion.Euler(360f + minViewAngle, 0, 0);
+                }
+
+                //moves the camera based on current rotation of target
+                float yAngle = target.eulerAngles.y;
+                float xAngle = pivot.eulerAngles.x;
+                rotation = Quaternion.Euler(xAngle, yAngle, 0);
+
+                transform.position = target.position - (rotation * offset);
+
+                //checks if camera view is blocked by an object and if so adjusts the camera to not be blocked
+                RaycastHit wallHit = new RaycastHit();
+                if (Physics.Linecast(target.position, transform.position, out wallHit))
+                {
+                    Debug.DrawLine(transform.position, target.position, Color.green);
+                    if (wallHit.collider.tag != "Collectible")
+                    {
+                        transform.position = new Vector3(wallHit.point.x, wallHit.point.y, wallHit.point.z) + wallHit.normal;
+                    }
+                }
+                transform.LookAt(target);
             }
-            transform.LookAt(target);
         }
+    }
+
+    public void pauseGame()
+    {
+        listenToInput = false;
+    }
+    public void unPauseGame()
+    {
+        listenToInput = true;
     }
 }
