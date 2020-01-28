@@ -1936,7 +1936,7 @@ MonoBehaviour:
   - {fileID: 1832408797}
   - {fileID: 664495519}
   - {fileID: 2592263}
-  player: {fileID: 0}
+  player: {fileID: 811232182}
   targetPlayer: 0
 --- !u!195 &975804576
 NavMeshAgent:
@@ -3243,7 +3243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2145027559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3262,7 +3262,7 @@ MonoBehaviour:
   - {fileID: 198859902}
   - {fileID: 755925716}
   - {fileID: 1485535143}
-  player: {fileID: 0}
+  player: {fileID: 811232182}
   targetPlayer: 0
 --- !u!195 &2145027560
 NavMeshAgent:
