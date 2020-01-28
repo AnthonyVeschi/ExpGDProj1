@@ -334,6 +334,7 @@ MonoBehaviour:
   Items:
   - {fileID: 3978335392645827963, guid: 4f0628aca8cec7a4f935384b2ac61627, type: 3}
   - {fileID: 8283794847666367159, guid: d1862b4da60ba9c4787de9750c6bd5dd, type: 3}
+  - {fileID: 7977555708603665717, guid: 85fbc15c77882444f9dc6adbb8e6cfab, type: 3}
   Slots:
   - {fileID: 0}
   - {fileID: 0}
@@ -343,7 +344,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   equippedItemID: -1
-  pickUpRange: 20
+  pickUpRange: 40
   gunThrowForce: 20
   cam: {fileID: 5472648605305988585}
   gunPosition: {fileID: 0}

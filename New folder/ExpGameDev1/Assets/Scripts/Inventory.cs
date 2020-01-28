@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
 
     GameObject gun;
     GameObject wire;
+    GameObject key;
 
     Rigidbody gunRB;
 
@@ -101,6 +102,8 @@ public class Inventory : MonoBehaviour
                         break;
                     case (1):
                         break;
+                    case (2):
+                        break;
                 }
             }
 
@@ -122,6 +125,13 @@ public class Inventory : MonoBehaviour
             case (1):
                 equippedItemID = 1;
                 break;
+            case (2):
+                if (equippedItemID == 2) { break; }
+                else if (equippedItemID != -1) { PutAwayItem(); }
+
+                key = Instantiate(Items[ID], gunPosition, false);
+                equippedItemID = 2;
+                break;
         }
     }
 
@@ -135,6 +145,9 @@ public class Inventory : MonoBehaviour
                 Destroy(gun);
                 break;
             case (1):
+                break;
+            case (2):
+                Destroy(key);
                 break;
         }
         equippedItemID = -1;
