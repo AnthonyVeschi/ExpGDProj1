@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     public float minViewAngle;
 
     private Quaternion rotation;
-    private Vector3 startPos;
+    private Vector3 cameraPosition;
     private Vector3 targetPosition;
     private Vector3 offsetX;
     private Vector3 offsetY;
@@ -37,14 +37,31 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //rotate just camera if right clicking
+        //rotate just camera if holding c
         if (Input.GetKey("c"))
         {
-            Quaternion cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * cameraRotateSpeed, -Vector3.up);
+            Quaternion cameraTurnAngle = Quaternion.AngleAxis(-Input.GetAxis("Mouse X") * cameraRotateSpeed, -Vector3.up);
 
             Vector3 newPos = target.position + (cameraTurnAngle * (transform.position-target.position));
             transform.position = newPos;
+
+            //checks if camera view is blocked by an object and if so adjusts the camera to not be blocked
+            RaycastHit wallHit = new RaycastHit();
+            if (Physics.Linecast(target.position, transform.position, out wallHit))
+            {
+                Debug.DrawLine(transform.position, target.position, Color.green);
+                if (wallHit.collider.tag != "Collectible")
+                {
+                    transform.position = new Vector3(wallHit.point.x, wallHit.point.y, wallHit.point.z) + wallHit.normal;
+                }
+            }
+
             transform.LookAt(target);
+        }
+        else if (Input.GetKeyUp("c"))
+        {
+            StartCoroutine("ResetCameraPosition");
+            //ResetCameraPosition();
         }
         //else rotate camera and target together
         else
@@ -87,6 +104,28 @@ public class CameraController : MonoBehaviour
                 }
             }
             transform.LookAt(target);
+            cameraPosition = transform.position;
+        }
+    }
+
+    IEnumerator ResetCameraPosition()
+    {
+        Vector3 startPos = transform.position;
+        float startTime = Time.time;
+        float distance = Vector3.Distance(transform.position, cameraPosition);
+        //while(cameraPosition != transform.position)
+        for(int i = 0; i<100; i++)
+        {
+            float distCovered = (Time.time - startTime) / 1f;
+            float fractionOfJourney = distCovered / distance;
+            print("Camera Pos: " + transform.position + " endPos: " + cameraPosition);
+            transform.position = Vector3.Slerp(startPos, cameraPosition, Time.deltaTime * cameraRotateSpeed);
+            if (cameraPosition == transform.position)
+            {
+                print("Exiting");
+                break;
+            }
+            yield return 0;
         }
     }
 }
