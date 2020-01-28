@@ -9,6 +9,16 @@ public class InventoryMenu : MonoBehaviour
 
     public float inventorySlowTime = 0.2f;
 
+    GameObject player;
+    GameObject cam;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        cam = GameObject.Find("Player").transform.Find("Main Camera").gameObject;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +41,10 @@ public class InventoryMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         inventoryMenuIsOpen = false;
+
+        player.GetComponent<PlayerMovement>().unPauseGame();
+        player.GetComponent<Inventory>().unPauseGame();
+        cam.GetComponent<CameraController>().unPauseGame();
     }
 
     void openInventoryMenu()
@@ -39,5 +53,9 @@ public class InventoryMenu : MonoBehaviour
         Time.timeScale = inventorySlowTime;
         Cursor.lockState = CursorLockMode.None;
         inventoryMenuIsOpen = true;
+
+        player.GetComponent<PlayerMovement>().pauseGame();
+        player.GetComponent<Inventory>().pauseGame();
+        cam.GetComponent<CameraController>().pauseGame();
     }
 }

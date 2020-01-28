@@ -16,7 +16,9 @@ public class PlayerMovement : MonoBehaviour {
 
     Vector3 velocity;
     bool isGrounded;
-	
+
+    bool listenToInput = true;
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -32,9 +34,9 @@ public class PlayerMovement : MonoBehaviour {
 
         Vector3 move = (transform.right * x) + (transform.forward * z);
 
-        controller.Move(move * speed * Time.deltaTime);
+        if (listenToInput) { controller.Move(move * speed * Time.deltaTime); }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (listenToInput && Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
@@ -43,4 +45,13 @@ public class PlayerMovement : MonoBehaviour {
 
         controller.Move(velocity * Time.deltaTime);
 	}
+
+    public void pauseGame()
+    {
+        listenToInput = false;
+    }
+    public void unPauseGame()
+    {
+        listenToInput = true;
+    }
 }

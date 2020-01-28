@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6354345202690376565}
   - component: {fileID: 5498131796366137370}
   - component: {fileID: 3169161359475702678}
+  - component: {fileID: 5908319430689603928}
   m_Layer: 5
   m_Name: wireButton
   m_TagString: Untagged
@@ -120,3 +121,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5908319430689603928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749795062109024052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6e634022b575c4492c1cb6a60ac9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1
