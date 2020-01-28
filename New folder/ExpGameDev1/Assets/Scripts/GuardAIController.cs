@@ -7,6 +7,8 @@ public class GuardAIController : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] guardPath;
+    public Transform player;
+    public bool targetPlayer = false;
 
     private int i = 0;
     private bool incremented = false;
@@ -22,22 +24,34 @@ public class GuardAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //set next destination for guard
-        if (agent.remainingDistance < 7.5f && System.Math.Abs(agent.remainingDistance) > Mathf.Epsilon && !incremented)
+        if (Input.GetKeyDown("i"))
         {
-            print("incremented to: " + i);
-            i++;
-            if (i == guardPath.Length)
-            {
-                i = 0;
-            }
-            agent.SetDestination(guardPath[i].position);
-            incremented = true;
-
+            targetPlayer = !targetPlayer;
         }
-        if (agent.remainingDistance > 10f)
+
+        if (!targetPlayer)
         {
-            incremented = false;
+            //set next destination for guard
+            if (agent.remainingDistance < 7.5f && System.Math.Abs(agent.remainingDistance) > Mathf.Epsilon && !incremented)
+            {
+                print("incremented to: " + i);
+                i++;
+                if (i == guardPath.Length)
+                {
+                    i = 0;
+                }
+                agent.SetDestination(guardPath[i].position);
+                incremented = true;
+
+            }
+            if (agent.remainingDistance > 10f)
+            {
+                incremented = false;
+            }
+        }
+        else
+        {
+            agent.SetDestination(player.transform.position);
         }
     }
 }
