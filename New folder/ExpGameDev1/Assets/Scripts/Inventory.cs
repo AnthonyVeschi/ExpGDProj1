@@ -129,6 +129,7 @@ public class Inventory : MonoBehaviour
                 else if (equippedItemID != -1) { PutAwayItem(); }
 
                 broom = Instantiate(Items[ID], gunPosition, false);
+                broom.GetComponent<Broom>().enabled = true;
                 equippedItemID = 0;
                 break;
             case (1):
@@ -139,6 +140,11 @@ public class Inventory : MonoBehaviour
                 equippedItemID = 1;
                 break;
             case (2):
+                if (equippedItemID == 2) { break; }
+                else if (equippedItemID != -1) { PutAwayItem(); }
+
+                wire = Instantiate(Items[ID], gunPosition, false);
+                wire.GetComponent<Broom>().enabled = true;
                 equippedItemID = 2;
                 break;
             case (3):
@@ -164,6 +170,7 @@ public class Inventory : MonoBehaviour
                 Destroy(gun);
                 break;
             case (2):
+                Destroy(wire);
                 break;
             case (3):
                 Destroy(key);

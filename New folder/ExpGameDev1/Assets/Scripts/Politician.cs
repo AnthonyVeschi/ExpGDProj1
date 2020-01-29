@@ -51,5 +51,7 @@ public class Politician : MonoBehaviour
                 lawManager.GetComponent<LawManager>().enactSkateOrDieLaw();
                 break;
         }
+
+        Destroy(gameObject);
     }
 }
