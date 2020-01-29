@@ -425,11 +425,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items:
+  - {fileID: 5438728005887393734, guid: 034fa27e3751a45429d3d91fd51687f5, type: 3}
   - {fileID: 3978335392645827963, guid: 4f0628aca8cec7a4f935384b2ac61627, type: 3}
   - {fileID: 8283794847666367159, guid: d1862b4da60ba9c4787de9750c6bd5dd, type: 3}
   - {fileID: 7977555708603665717, guid: 85fbc15c77882444f9dc6adbb8e6cfab, type: 3}
   Slots:
-  - {fileID: 0}
+  - {fileID: 5438728005887393734, guid: 034fa27e3751a45429d3d91fd51687f5, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   UISlots:
@@ -437,6 +438,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   equippedItemID: -1
+  dropButtonPrefab: {fileID: 871068208681783027, guid: 1e096ceb7d21d314ba0fbd25fd2de495,
+    type: 3}
   pickUpRange: 40
   gunThrowForce: 20
   cam: {fileID: 5472648605305988585}

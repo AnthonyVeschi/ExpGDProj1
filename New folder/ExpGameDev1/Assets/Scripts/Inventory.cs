@@ -12,6 +12,8 @@ public class Inventory : MonoBehaviour
 
     int pickUpID;
     GameObject pickUpButton;
+    public GameObject dropButtonPrefab;
+    GameObject dropButton;
 
     bool spaceForItem;
     int spaceIndex;
@@ -19,6 +21,7 @@ public class Inventory : MonoBehaviour
     public float pickUpRange = 2f;
     int pickUpLayerMask;
 
+    GameObject broom;
     GameObject gun;
     GameObject wire;
     GameObject key;
@@ -69,6 +72,8 @@ public class Inventory : MonoBehaviour
                         Slots[spaceIndex] = Items[pickUpID];
                         pickUpButton = hit.transform.GetComponent<itemImage>().button;
                         Instantiate(pickUpButton, UISlots[spaceIndex].transform);
+                        dropButton = Instantiate(dropButtonPrefab, UISlots[spaceIndex].transform);
+                        dropButton.GetComponent<DropButtonUIEvent>().AssignSlot(spaceIndex);
                         Destroy(hit.transform.gameObject);
                     }
                 }
@@ -81,18 +86,22 @@ public class Inventory : MonoBehaviour
                     case (-1):
                         break;
                     case (0):
+                        break;
+                    case (1):
                         int i = -1;
                         foreach (GameObject item in Slots)
                         {
-                            if (item != null && item.GetComponent<itemID>().ID == 0)
+                            if (item != null && item.GetComponent<itemID>().ID == 1)
                             {
                                 i = System.Array.IndexOf(Slots, item);
                                 break;
                             }
                         }
                         Slots[i] = null;
-                        GameObject destroyableButton = UISlots[i].transform.Find("gunButton(Clone)").gameObject;
-                        Destroy(destroyableButton);
+                        foreach (Transform child in UISlots[i].transform)
+                        {
+                            Destroy(child.gameObject);
+                        }
 
                         gun.transform.parent = null;
                         gunRB = gun.GetComponent<Rigidbody>();
@@ -100,9 +109,9 @@ public class Inventory : MonoBehaviour
                         gunRB.AddForce(cam.transform.forward * gunThrowForce, ForceMode.Impulse);
                         equippedItemID = -1;
                         break;
-                    case (1):
-                        break;
                     case (2):
+                        break;
+                    case (3):
                         break;
                 }
             }
@@ -119,18 +128,25 @@ public class Inventory : MonoBehaviour
                 if (equippedItemID == 0) { break; }
                 else if (equippedItemID != -1) { PutAwayItem(); }
 
-                gun = Instantiate(Items[ID], gunPosition, false);
+                broom = Instantiate(Items[ID], gunPosition, false);
                 equippedItemID = 0;
                 break;
             case (1):
+                if (equippedItemID == 1) { break; }
+                else if (equippedItemID != -1) { PutAwayItem(); }
+
+                gun = Instantiate(Items[ID], gunPosition, false);
                 equippedItemID = 1;
                 break;
             case (2):
-                if (equippedItemID == 2) { break; }
+                equippedItemID = 2;
+                break;
+            case (3):
+                if (equippedItemID == 3) { break; }
                 else if (equippedItemID != -1) { PutAwayItem(); }
 
                 key = Instantiate(Items[ID], gunPosition, false);
-                equippedItemID = 2;
+                equippedItemID = 3;
                 break;
         }
     }
@@ -142,15 +158,30 @@ public class Inventory : MonoBehaviour
             case (-1):
                 break;
             case (0):
-                Destroy(gun);
+                Destroy(broom);
                 break;
             case (1):
+                Destroy(gun);
                 break;
             case (2):
+                break;
+            case (3):
                 Destroy(key);
                 break;
         }
         equippedItemID = -1;
+    }
+
+    public void DropItem(int slot)
+    {
+        Instantiate(Slots[slot], gunPosition.position, Quaternion.identity);
+        Slots[slot] = null;
+        foreach (Transform child in UISlots[slot].transform)
+        {
+            Destroy(child.gameObject);
+        }
+        
+        PutAwayItem();
     }
 
     public void pauseGame()
