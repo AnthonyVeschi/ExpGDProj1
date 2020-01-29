@@ -8,6 +8,15 @@ public class Politician : MonoBehaviour
     GameObject lawManager;
     public int health = 5;
 
+    GameObject janitor;
+    Animator anim;
+
+    void Start()
+    {
+        janitor = transform.GetChild(0).gameObject;
+        anim = janitor.GetComponent<Animator>();
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -52,6 +61,7 @@ public class Politician : MonoBehaviour
                 break;
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        anim.SetTrigger("dead");
     }
 }

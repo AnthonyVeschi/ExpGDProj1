@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 
         velocity.y += gravity * Time.deltaTime;
 
-        if (move.x > 0 && move.z > 0)
+        if (move.x != 0 || move.z !=0)
         {
             this.gameObject.transform.GetChild(4).GetComponent<Animator>().SetBool("isWalking", true);
         }

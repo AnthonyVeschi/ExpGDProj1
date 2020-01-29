@@ -8,12 +8,21 @@ public class Broom : MonoBehaviour
     public int damage;
     bool onCooldown = false;
 
+    GameObject player;
+    GameObject janitor;
+    Animator anim;
+
+
     AudioSource a;
 
     // Start is called before the first frame update
     void Start()
     {
         a = gameObject.GetComponent<AudioSource>();
+
+        player = GameObject.Find("Player");
+        janitor = player.transform.GetChild(4).gameObject;
+        anim = janitor.GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -36,6 +45,7 @@ public class Broom : MonoBehaviour
     {
         if (politician != null && Input.GetMouseButtonDown(0) && !onCooldown)
         {
+            anim.SetTrigger("whack");
             politician.GetComponent<Politician>().TakeDamage(damage);
             StartCoroutine(Cooldown());
             a.Play();
