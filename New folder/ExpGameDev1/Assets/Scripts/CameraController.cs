@@ -98,11 +98,12 @@ public class CameraController : MonoBehaviour
 
             //checks if camera view is blocked by an object and if so adjusts the camera to not be blocked
             RaycastHit wallHit = new RaycastHit();
-            if (Physics.Linecast(target.position, transform.position, out wallHit))
+            if (Physics.Linecast(transform.position, target.position, out wallHit))
             {
                 Debug.DrawLine(transform.position, target.position, Color.green);
-                if (wallHit.collider.tag != "Collectible")
+                if (wallHit.collider.tag != "Collectible" && wallHit.collider.tag != "Player")
                 {
+                        print("******************* " + wallHit.collider.name);
                     transform.position = new Vector3(wallHit.point.x, wallHit.point.y, wallHit.point.z) + wallHit.normal;
                 }
             }
