@@ -89,7 +89,6 @@ public class GuardAIController : MonoBehaviour
         playersLastSeenLocation = player.transform.position;
         agent.SetDestination(playersLastSeenLocation);
         FasterGuards(1.5f);
-
     }
 
     public bool ConeCheck(float distanceAway)
