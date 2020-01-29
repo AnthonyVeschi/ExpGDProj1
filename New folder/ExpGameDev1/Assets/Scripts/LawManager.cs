@@ -140,6 +140,10 @@ public class LawManager : MonoBehaviour
 
     void SkateOrDieHelper()
     {
+        GameObject player = GameObject.Find("Player");
+        player.GetComponent<PlayerMovement>().Skate();
+
+        //increase guards' movespeed here
     }
 
     //functions that execute once the levels have fully loaded
@@ -161,9 +165,9 @@ public class LawManager : MonoBehaviour
     public void Level4Loaded()
     {
         Level3Loaded();
-        if (xRayGlassesLaw) { }
-        if (noFacesLaw) { }
-        if (skateOrDieLaw) { }
+        if (xRayGlassesLaw) { XRayGlassesHelper(); }
+        if (noFacesLaw) { NoFacesHelper(); }
+        if (skateOrDieLaw) { SkateOrDieHelper(); }
     }
 
     void LoadNextLevel()
