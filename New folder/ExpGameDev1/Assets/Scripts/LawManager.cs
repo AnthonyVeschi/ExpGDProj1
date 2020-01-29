@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class LawManager : MonoBehaviour
 {
-    public bool xRayGlassesLaw = false;
-    public bool openDoorsLaw = false;
-    public bool closedDoorsLaw = false;
-    public bool noFacesLaw = false;
-    public bool noColorsLaw = false;
-    public bool noLawsLaw = false;
-    public bool skateOrDieLaw = false;
-    public bool sunglassesLaw = false;
-    public bool greenNewDealLaw = false;
+    public bool xRayGlassesLaw = true;
+    public bool openDoorsLaw = true;
+    public bool closedDoorsLaw = true;
+    public bool noFacesLaw = true;
+    public bool noColorsLaw = true;
+    public bool noLawsLaw = true;
+    public bool skateOrDieLaw = true;
+    public bool sunglassesLaw = true;
+    public bool greenNewDealLaw = true;
 
     public int currentLevel = 1;
 
@@ -25,6 +26,8 @@ public class LawManager : MonoBehaviour
     public Transform[] plantSpawns;
     public GameObject plant;
 
+    GameObject guard;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,43 +37,43 @@ public class LawManager : MonoBehaviour
     //level 1 laws
     public void enactClosedDoorLaw()
     {
-        if (!noColorsLaw && !greenNewDealLaw) { closedDoorsLaw = true; }
+        if (noColorsLaw && greenNewDealLaw) { closedDoorsLaw = false; }
     }
     public void enactNoColorsLaw()
     {
-        if (!closedDoorsLaw && !greenNewDealLaw) { noColorsLaw = true; }
+        if (closedDoorsLaw && greenNewDealLaw) { noColorsLaw = false; }
     }
     public void enactGreenNewDealLaw()
     {
-        if (!closedDoorsLaw && !noColorsLaw) { greenNewDealLaw = true; }
+        if (closedDoorsLaw && noColorsLaw) { greenNewDealLaw = false; }
     }
 
     //level 2 laws
     public void enactOpenDoorLaw()
     {
-        if (!noLawsLaw && !sunglassesLaw) { openDoorsLaw = true; }
+        if (noLawsLaw && sunglassesLaw) { openDoorsLaw = false; }
     }
     public void enactNoLawsLaw()
     {
-        if (!openDoorsLaw && !sunglassesLaw) { noLawsLaw = true; }
+        if (openDoorsLaw && sunglassesLaw) { noLawsLaw = false; }
     }
     public void enactSunglassesLaw()
     {
-        if (!noLawsLaw && !openDoorsLaw) { sunglassesLaw = true; }
+        if (noLawsLaw && openDoorsLaw) { sunglassesLaw = false; }
     }
 
     //level 3 laws
     public void enactXRayGlassesLaw()
     {
-        if (!noFacesLaw && !skateOrDieLaw) { xRayGlassesLaw = true; }
+        if (noFacesLaw && skateOrDieLaw) { xRayGlassesLaw = false; }
     }
     public void enactNoFacesLaw()
     {
-        if (!xRayGlassesLaw && !skateOrDieLaw) { noFacesLaw = true; }
+        if (xRayGlassesLaw && skateOrDieLaw) { noFacesLaw = false; }
     }
     public void enactSkateOrDieLaw()
     {
-        if (!noFacesLaw && !xRayGlassesLaw) { skateOrDieLaw = true; }
+        if (noFacesLaw && xRayGlassesLaw) { skateOrDieLaw = false; }
     }
 
     //law helpers
@@ -117,6 +120,16 @@ public class LawManager : MonoBehaviour
         }
 
         //activate the extra guard spawns here
+        guard = GameObject.Find("Guard1 (2x law)");
+        guard.GetComponent<MeshRenderer>().enabled = true;
+        guard.GetComponent<BoxCollider>().enabled = true;
+        guard.GetComponent<NavMeshAgent>().enabled = true;
+        guard.GetComponent<GuardAIController>().enabled = true;
+        guard = GameObject.Find("Guard2 (2x law)");
+        guard.GetComponent<MeshRenderer>().enabled = true;
+        guard.GetComponent<BoxCollider>().enabled = true;
+        guard.GetComponent<NavMeshAgent>().enabled = true;
+        guard.GetComponent<GuardAIController>().enabled = true;
     }
 
     void NoLawsHelper()
@@ -132,6 +145,11 @@ public class LawManager : MonoBehaviour
 
     void XRayGlassesHelper()
     {
+        //active the shiz on the guards here
+        GameObject.Find("Guard1").GetComponent<GuardAIController>().FasterGuards(5);
+        GameObject.Find("Guard2").GetComponent<GuardAIController>().FasterGuards(5);
+        GameObject.Find("Guard1 (2x law)").GetComponent<GuardAIController>().FasterGuards(5);
+        GameObject.Find("Guard2 (2x law)").GetComponent<GuardAIController>().FasterGuards(5);
     }
 
     void NoFacesHelper()

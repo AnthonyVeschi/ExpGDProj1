@@ -104,15 +104,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a652851d167d35f4fa4d6d85aa153e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRayGlassesLaw: 0
-  openDoorsLaw: 0
-  closedDoorsLaw: 0
-  noFacesLaw: 0
-  noColorsLaw: 0
-  noLawsLaw: 0
-  skateOrDieLaw: 0
-  sunglassesLaw: 0
-  greenNewDealLaw: 0
+  xRayGlassesLaw: 1
+  openDoorsLaw: 1
+  closedDoorsLaw: 1
+  noFacesLaw: 1
+  noColorsLaw: 1
+  noLawsLaw: 1
+  skateOrDieLaw: 1
+  sunglassesLaw: 1
+  greenNewDealLaw: 1
   currentLevel: 1
   doorSpawns:
   - {fileID: 0}
