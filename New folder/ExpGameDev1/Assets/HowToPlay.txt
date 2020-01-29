@@ -1,0 +1,26 @@
+You are a janitor in a government building.
+Every day, you recieve instructions on your phone instructing you to kill one of three lawmakers.
+Whoever you kill, their law will not go into effect.
+You can only prevent one law per day.
+Some laws make it harder for you to find your targets by limiting the information your contact can access.
+Some laws make it trickier to navigate the building without getting spotted by guards.
+Some laws are just plain strange.
+You only have a set time to choose a target and make it to the next day.
+Good luck!
+
+Collide with the red box to go to the next level
+You lose if you do not make it to the box in 2 minutes
+You do not need to kill anyone to not lose, but you'll want to in order to prevent laws from taking effect
+
+Controls:
+	WASD to move
+	E to pick up an item
+	Q to open inventory
+	R to put away item
+	Right-Click with item equipped to use item
+
+Items:
+	Broom: decent weapon
+	Gun: probably doesn't even do anything
+	Wire: effective weapon
+	Key Card: open doors
