@@ -192,6 +192,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Door
       objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,6 +728,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
@@ -1805,6 +1825,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
@@ -4052,6 +4082,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CircleDesk
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9adf346bfc44a2346b29cff66f1d8251,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9adf346bfc44a2346b29cff66f1d8251,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9adf346bfc44a2346b29cff66f1d8251,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4289,6 +4329,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
@@ -5815,6 +5865,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Door
       objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6665,6 +6725,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Door
       objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6829,6 +6899,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
@@ -7475,6 +7555,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Door
       objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 828503451311055738, guid: 9edec6ddfd94a354aa59e946016c9835,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8375038784101340048, guid: 9edec6ddfd94a354aa59e946016c9835,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7765,6 +7855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BuildingNew
+      objectReference: {fileID: 0}
+    - target: {fileID: -3857134395725440809, guid: 519c72baf8bd77c46be2d2c60397f936,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 519c72baf8bd77c46be2d2c60397f936,
         type: 3}
@@ -8481,6 +8576,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472648605985203215, guid: 742c628fffe884648b59a1ae8441ae2f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3653555
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472648605985203215, guid: 742c628fffe884648b59a1ae8441ae2f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.92396706
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472648605985203215, guid: 742c628fffe884648b59a1ae8441ae2f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92396706
       objectReference: {fileID: 0}
     - target: {fileID: 5472648605985203201, guid: 742c628fffe884648b59a1ae8441ae2f,
         type: 3}
