@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
+    public Transform shoulder;
     public Transform target;
     public Vector3 offset;
     public bool useOffset;
@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         pivot.transform.parent = target.transform;
         Cursor.lockState = CursorLockMode.Locked;
 
-        transform.LookAt(target);
+        transform.LookAt(shoulder);
     }
 
     // Update is called once per frame
@@ -59,7 +59,7 @@ public class CameraController : MonoBehaviour
                 }
             }
 
-            transform.LookAt(target);
+            transform.LookAt(shoulder);
         }
         else if (Input.GetKeyUp("c"))
         {
@@ -106,9 +106,9 @@ public class CameraController : MonoBehaviour
                     transform.position = new Vector3(wallHit.point.x, wallHit.point.y, wallHit.point.z) + wallHit.normal;
                 }
             }
-            transform.LookAt(target);
+            transform.LookAt(shoulder);
         }
-        transform.LookAt(target);
+        transform.LookAt(shoulder);
         cameraPosition = transform.position;
     }
 
