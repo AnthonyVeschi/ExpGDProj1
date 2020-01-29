@@ -24,6 +24,7 @@ public class GuardAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //temp holder to target player instead of normal guard path
         if (Input.GetKeyDown("i"))
         {
             targetPlayer = !targetPlayer;
