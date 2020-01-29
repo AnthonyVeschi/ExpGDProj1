@@ -139,8 +139,8 @@ public class LawManager : MonoBehaviour
     void SunglassesHelper()
     {
         GameObject player = GameObject.Find("Player");
-        GameObject sunglasses = player.transform.GetChild(1).GetChild(0).gameObject;
-        sunglasses.SetActive(true);
+        GameObject sunglasses = player.transform.GetChild(0).GetChild(0).gameObject;
+        sunglasses.GetComponent<MeshRenderer>().enabled = true;
     }
 
     void XRayGlassesHelper()

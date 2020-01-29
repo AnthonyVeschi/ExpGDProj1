@@ -1683,17 +1683,17 @@ PrefabInstance:
     - target: {fileID: 5391421677075311204, guid: 85fbc15c77882444f9dc6adbb8e6cfab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.06
+      value: 31.03
       objectReference: {fileID: 0}
     - target: {fileID: 5391421677075311204, guid: 85fbc15c77882444f9dc6adbb8e6cfab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 19.83
       objectReference: {fileID: 0}
     - target: {fileID: 5391421677075311204, guid: 85fbc15c77882444f9dc6adbb8e6cfab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 55.07
+      value: 49.710003
       objectReference: {fileID: 0}
     - target: {fileID: 5391421677075311204, guid: 85fbc15c77882444f9dc6adbb8e6cfab,
         type: 3}
@@ -2600,7 +2600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709860848}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 68.77, y: 7.05, z: 55.01}
+  m_LocalPosition: {x: 31.74, y: 21.66, z: 49.65}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2882,7 +2882,7 @@ GameObject:
   - component: {fileID: 777335855}
   - component: {fileID: 777335856}
   m_Layer: 0
-  m_Name: noColors
+  m_Name: noLaws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2939,7 +2939,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dde130a34ebb10b4ba9ec5e81a5f55e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10c45d135f405f342bcb0d4328bf59de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3082,13 +3082,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809880615}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 69.03, y: 7.22, z: 52.01}
+  m_LocalRotation: {x: -0, y: -0.8018565, z: -0, w: 0.59751666}
+  m_LocalPosition: {x: -64.393135, y: 21.45, z: 16.225306}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -106.616005, z: 0}
 --- !u!1001 &827988110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3673,7 +3673,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584391, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_Name
-      value: PottedPlantsGuy
+      value: SunglassesGuy
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584391, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -3688,12 +3688,12 @@ PrefabInstance:
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.77
+      value: 16.12
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.73
+      value: -2.18
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -3761,7 +3761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196bc6171a5a987499a02fd1e0d235e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLaw: 3
+  myLaw: 6
   health: 5
 --- !u!1 &1047801068
 GameObject:
@@ -4014,7 +4014,7 @@ GameObject:
   - component: {fileID: 1113955719}
   - component: {fileID: 1113955720}
   m_Layer: 0
-  m_Name: pottedPlants
+  m_Name: sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4071,7 +4071,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36b4c104dfd253e4d8e9c8a15190f3e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa53c3041a9a32542823c61c65869466, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4265,17 +4265,17 @@ PrefabInstance:
     - target: {fileID: 6276103384545507072, guid: 4f0628aca8cec7a4f935384b2ac61627,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 18.6
       objectReference: {fileID: 0}
     - target: {fileID: 6276103384545507072, guid: 4f0628aca8cec7a4f935384b2ac61627,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.8
+      value: -16.7
       objectReference: {fileID: 0}
     - target: {fileID: 6276103384545507072, guid: 4f0628aca8cec7a4f935384b2ac61627,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.9
+      value: -21.7
       objectReference: {fileID: 0}
     - target: {fileID: 6276103384545507072, guid: 4f0628aca8cec7a4f935384b2ac61627,
         type: 3}
@@ -5874,7 +5874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741836541}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 69.18, y: 6.95, z: 58.74}
+  m_LocalPosition: {x: -22.1, y: 20.3, z: -16.17}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5891,7 +5891,7 @@ GameObject:
   - component: {fileID: 1759480080}
   - component: {fileID: 1759480081}
   m_Layer: 0
-  m_Name: closedDoors
+  m_Name: openDoors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5948,7 +5948,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d50459ba876c3bc4f8a64da63bb723a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 091c2813908b05644bac443632bfa796, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6885,7 +6885,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584391, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_Name
-      value: ClosedDoorsGuy
+      value: OpenDoorsGuy
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584391, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -6895,7 +6895,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.84
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -6905,7 +6905,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.17
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -6973,7 +6973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196bc6171a5a987499a02fd1e0d235e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLaw: 1
+  myLaw: 4
   health: 5
 --- !u!1001 &2036444028
 PrefabInstance:
@@ -6995,17 +6995,17 @@ PrefabInstance:
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.31
+      value: -63.783253
       objectReference: {fileID: 0}
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 19.45
       objectReference: {fileID: 0}
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.73
+      value: 16.699495
       objectReference: {fileID: 0}
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
@@ -7015,7 +7015,7 @@ PrefabInstance:
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6807669
+      value: -0.8231774
       objectReference: {fileID: 0}
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
@@ -7025,7 +7025,7 @@ PrefabInstance:
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.73250014
+      value: 0.56778437
       objectReference: {fileID: 0}
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
@@ -7045,7 +7045,7 @@ PrefabInstance:
     - target: {fileID: 919183674429622089, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 85.80701
+      value: -110.80801
       objectReference: {fileID: 0}
     - target: {fileID: 8626970430744577338, guid: d1862b4da60ba9c4787de9750c6bd5dd,
         type: 3}
@@ -7676,7 +7676,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584391, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_Name
-      value: NoColorsGuy
+      value: NoLawsGuy
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584391, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -7686,7 +7686,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.36
+      value: -57.74
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -7696,7 +7696,7 @@ PrefabInstance:
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.87
+      value: 28.39
       objectReference: {fileID: 0}
     - target: {fileID: 936279072764584397, guid: 82ddcebb24179d7469683cc578220190,
         type: 3}
@@ -7764,5 +7764,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196bc6171a5a987499a02fd1e0d235e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLaw: 2
+  myLaw: 5
   health: 5
